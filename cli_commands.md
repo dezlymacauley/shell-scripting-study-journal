@@ -101,8 +101,71 @@ you can use several keyboard controls to move through the file:
     q: Quit and return to the previous terminal window
 
 ## Authenticate and Authorize users
+Permissions in Linux: Read, Write, Execute
+Types of owners: Users, Group, Other (All other users on the system)
+
+In Linux, file permissions are represented with a 10 character string.
+A directory with full permission: `drwxrwxrwx`
+
+Let's break this down:
+`d`rwxrwxrwx = Directory. This first character shows the file type
+For a regular file, it would be a hyphen.
+
+d`rxw`rwxrwx = The next three characters are the user permission.
+rwx means the user has Read, Write, and eXecute permissions.
+If one of these permissions was missing, 
+there would be a hyphen instead of the character.
+
+drxw`rwx`rwx = The next three characters are the group permission.
+drxwrwx`rwx` = The last three characters are the permissions for other users.
+
+## How to view the permissions of a file 
+
+`ls - l` = List files and directories, and their permisions
+`ls -la` = List all files and directories (including hidden) and their permissions.
+
+---
+
+## How to change the permissions of a file
+
+`chmod` = Change mode
+E.g. `chmod g+w, o-r acces.txt`
+
+Let's break this down:
+The lowercase letters represent the types of owners.
+u = users
+g = group
+o = other
+
+E.g. `chmod g+w, o-r acces.txt`
+So this means that write permissions have been added to the group,
+and read permissions have been removed from other users. 
+
+---
+
+## How to add users to the system
+
+`useradd` = Add user. E.g. `sudo useradd madara`
+
+You can also delete a user with the commmand 
+`userdel`
+
+`usermod` = Modify user permissions
+
+    -g: Sets the user’s default group, also called their primary group
+
+    -G: Adds the user to additional groups, also called supplemental or secondary groups
+
+## userdel
+
+The userdel command deletes a user from the system. For example, entering sudo userdel fgarcia deletes fgarcia as a user. Be careful before you delete a user using this command.
+
+The userdel command doesn’t delete the files in the user’s home directory unless you use the -r option. Entering sudo userdel -r fgarcia would delete fgarcia as a user and delete all files in their home directory. Before deleting any user files, you should ensure you have backups in case you need them later.
+
+Note: Instead of deleting the user, you could consider deactivating their account with usermod -L. This prevents the user from logging in while still giving you access to their account and associated permissions. For example, if a user left an organization, this option would allow you to identify which files they have ownership over, so you could move this ownership to other users.
 
 
+---
 
 ## Terms:
 OS = Operating System
