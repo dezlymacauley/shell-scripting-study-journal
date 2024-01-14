@@ -11,6 +11,9 @@ The bootloader is responsible for starting the operating system.
 Applications send requests to the operating system, and the operating system,
 directs those requests to the hardware.
 
+The Linux Architecture = The kernel, The shell, the Applications
+
+
 ## An example: Downloading a file from an internet browser
 
 Previously, you explored how operating systems, applications, and hardware work together by  examining a task involving a calculation. You can expand this understanding by exploring how the OS completes another task, downloading a file from an internet browser: 
