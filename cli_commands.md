@@ -35,10 +35,13 @@ and a relative path starts from the current directory.
             
 `cd`        = Change directory. E.g. `cd github/repos/`
 
+
 `cd ..`     = Go up one level in the file structure. 
             E.g. If you were in the directory `cd github/repos/cool-project`,
             then typing `cd ..` will take you back to,
             the `github/repos/` folder
+
+`cd ../..`  = Go up two levels in the file structure.
 
 `cd ~`      = This will take you back to the home directory.
 
@@ -59,7 +62,11 @@ and a relative path starts from the current directory.
             containing a specified
             The syntax is `grep what-you-want-to-find file_name.extension`
             E.g. `grep pizza meals_eaten.md`.
- 
+
+`wc`        = Get count of lines words, characters in file.
+
+`more`      = Print file contents page-by-page
+
 Another example: 
             `ls /home/analysts/reports | grep rust`
             This will return all files and directories,
@@ -85,6 +92,41 @@ to another command for further processing.
             E.g. `appropos password -a change password`
             This will show all lines with both the words change and password.
 
+# Other commands
+`whoami`    = Displays the user name.
+`id`        = Display user ID and group ID
+`uname`     = Display operating system name
+            This will output `Linux`            
+
+
+`uname -s -r` = Display the OS and version
+                Eg. This will display `Linux 6.6.10-arch1-1`
+
+`df -h`         = Disk free (Show disk usage for each file system)
+                Note: The `-h` means give me this info in a human readable format.                
+                Drive space will be shown in Gigabytes and Terabytes, instead of bytes.                
+
+`df -h ~`       = Shows all the disks mounted on your home directory.
+
+`ps`        = Show running processes. I haven't found the ouput of this command useful.
+`top`       = Show resource usage. Stands for table of processes.
+`df`        = Show info about mounted file systems.
+
+`date`      = Print out date 
+            E.g. Mon 15 Jan 15:03:35 EET 2024
+
+`printenv SHELL`    = Displays the default shell on your computer.
+                    E.g. Your output will look like `usr/bin/zsh`
+
+`bash`      = Use the bash shell (Must be installed)
+`zsh`       = Use the zsh shell (Must be installed)
+
+`man name-of-command` = View the manual for that command.
+
+## Viewing the contents of a file in a specific order
+`sort`      = Viewing lines of a file in alphabetical order
+`sort -r`   = View the lines of a file in reverse order
+ 
 
 ## Using the `less` command
 Once you’ve accessed your content with the less command,
@@ -164,6 +206,25 @@ The userdel command doesn’t delete the files in the user’s home directory un
 
 Note: Instead of deleting the user, you could consider deactivating their account with usermod -L. This prevents the user from logging in while still giving you access to their account and associated permissions. For example, if a user left an organization, this option would allow you to identify which files they have ownership over, so you could move this ownership to other users.
 
+
+---
+
+## Compression and archiving
+
+`tar` = archive a set of files
+`zip` = compress a set of files
+`unzip` = extract files from a compressed zip archive
+
+---
+
+## Networking 
+
+`hostname`  = print hostname
+`ping`      = send packets to URL and print a reponse.
+            E.g. `ping google.com` to test out the internet connection.
+`ifconfig`  = Display or configure network interfaces. NOTE: Not working on my systems. Need to fix.
+`curl`      = Display contents of file at a URL  
+`wget`      = Download file from URL
 
 ---
 
