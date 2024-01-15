@@ -62,6 +62,23 @@ and a relative path starts from the current directory.
             containing a specified
             The syntax is `grep what-you-want-to-find file_name.extension`
             E.g. `grep pizza meals_eaten.md`.
+            Random Fact: Grep stands for "global regular expression print"
+
+`grep -i`   = Makes the search case-insentive
+
+`cut`       = Gets a certain number of characters from each line in a file.
+            cut -c 2-9 people.txt (The first 2 to 9 inclusive letters)
+
+`cut -d`    = `cut -d ' ' -f2 people.text`
+            `-d` means delimeter (what character sepeartes each field in a line)
+            Let's say you had something like `Jace Sales-Rep 2024`
+            You could get the year by doing this:
+            `cut -d ' ' -f3 name-of-file.txt` -f3 means field three, 
+            "Sales-Rep" would be field 2
+
+`paste`     = `paste first.txt last.txt` Merge lines from different files.
+
+`uniq`      = Filter out repeated lines in a file. `uniq pets.txt`
 
 `wc`        = Get count of lines words, characters in file.
 
@@ -127,7 +144,6 @@ to another command for further processing.
 `sort`      = Viewing lines of a file in alphabetical order
 `sort -r`   = View the lines of a file in reverse order
  
-
 ## Using the `less` command
 Once you’ve accessed your content with the less command,
 you can use several keyboard controls to move through the file:
@@ -217,9 +233,52 @@ Note: Instead of deleting the user, you could consider deactivating their accoun
 
 ---
 
+`history` = View previously run commands
+
+---
+
+## Archiving and Compression
+
+`tar` = Archive and extract files
+        Usage:
+        `tar -czf name-of-archive-to-be-created.tar the-folder-you-want-to-archive`
+        `-c` means create an archieve
+        `-f` means from file
+        `-z` will compress the file using a program called `gzip`
+        -
+        Note: Adding `.gz` will ensure that Windows-based programs will recognize the file type.
+        "tar -czf name-of-archive-to-be-created.tar`.gz` the-folder-you-want-to-archive"
+
+NOTE:
+An achieved folder is also known as a tarball
+
+## How to view the contents of a tarball
+`tar -tf notes.tar`
+
+## How to extract the contents of a tar file
+`tar -xf name-of-archive.tar name-folder-to-create-to-store-exactrated files`
+
+---
+
+## NOTE: What's the difference between Zip and Tar
+
+`zip`
+
+zip compresses a file and then bundles it.
+tar bundles a file, and then compresses it.
+
+`zip -r notes.zip notes`
+This will create a zip file
+
+## How unzip 
+`unzip notes.zip`
+
+---
+
 ## Networking 
 
 `hostname`  = print hostname
+`hostname -i`  = print the ip adress of the hostname.
 `ping`      = send packets to URL and print a reponse.
             E.g. `ping google.com` to test out the internet connection.
 `ifconfig`  = Display or configure network interfaces. NOTE: Not working on my systems. Need to fix.
