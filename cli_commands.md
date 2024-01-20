@@ -6,6 +6,7 @@
 `Ctrl + A`  = Move the cursor to the beginning of a command
 `Ctrl + E`  = Move the cursor to the end of a command
 `Tab`       = Provide auto complete suggestions
+`Ctrl + W`  = Delete a word from your terminal prompt this is quite useful when you have made a mistake but you haven't run the command yet.
 
 `echo`      = prints out a message. E.g. `echo "I'm a hacker lol"`
 
