@@ -100,7 +100,12 @@ to another command for further processing.
 `touch`     = Creates a file.
 `rm`        = Removes, or deletes, a file
 `mv`        = Move a file E.g. `mv current-file-path new-file-path`
-`cp`        = Copy a path 
+`cp`        = Copy a file
+
+`cp -r *`   = Copy all files in a directory
+            E.g. `cp -r * ~/dogs/* ~/cats/`
+            This will copy all of the files in the dogs directory, 
+            and paste them in the cats directory
 
 ## Getting help about a command
 `man`       = View the mannual of a command. E.g. `man name-of-command`
@@ -303,3 +308,11 @@ echo = A Linux command that outputs a specified string of text
 E.g. `echo hello`
 
 String data = Data consisting of an ordered sequence of characters
+
+-------------------------------------------------------------------------------
+
+## How to redirect streams
+
+
+
+-------------------------------------------------------------------------------
